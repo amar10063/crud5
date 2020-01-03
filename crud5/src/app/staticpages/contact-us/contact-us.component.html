@@ -1,0 +1,28 @@
+<section class="cmspage mtb-40">
+  <div class="container">
+    <div class="page-desc">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1>Contact Us</h1>
+          <form formGroup="addForm"   >
+            <div class="form-group">
+              <input type="text"  formControlName="sid" class="form-control" placeholder="student ID">
+            </div>
+            <div class="form-group">
+              <input type="text" formControlName="fName" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <input type="text" formControlName="lName" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <input type="text" formControlName="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+              <button type="button" (click)="onSubmit()" class="btn btn-success"> Send </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
