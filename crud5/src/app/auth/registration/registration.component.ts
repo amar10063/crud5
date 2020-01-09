@@ -19,19 +19,17 @@ export class RegistrationComponent implements OnInit {
   }
   setFormState(): void {
     this.regForm = this.formbuilder.group({
-      Name: ['', [Validators.required]],
-      Mobile: ['', [Validators.required]],
-      EmailId: ['', [Validators.required]],
-      Password: ['', [Validators.required]]
+      AppID: ['', [Validators.required]],
+      MerchantKey: ['', [Validators.required]],
+      MdtID: ['', [Validators.required]],
+      Type: ['', [Validators.required]]
     })
   }
 
   onSubmit() {
     
     let employee = this.regForm.value;
-    console.log(employee);
-    let json=JSON.stringify(employee) ;
-    alert(json);
+    console.log(employee);   
     this.createemployee(employee);
     this.regForm.reset();
   }

@@ -10,32 +10,32 @@
                 <form  (ngSubmit)="onSubmit(regForm)" [formGroup]="regForm">
                     
                     <div class="form-group form-row">
-                        <label class="col-md-3"> Name : <span class="required">*</span></label>
+                        <label class="col-md-3"> ID : <span class="required">*</span></label>
                         <div class="col-md-9">
-                          <input type="text" formControlName="Name" class="form-control" placeholder="Name" required>
-                          <span *ngIf="!regForm.get('Name').valid && regForm.get('Name').touched">Please enter  Name !!!</span>
+                          <input type="text" formControlName="AppID" class="form-control" placeholder="Name" required>
+                          <span *ngIf="!regForm.get('AppID').valid && regForm.get('AppID').touched">Please enter  Name !!!</span>
                         </div>
                     </div>
                 
                     <div class="form-group form-row">
-                        <label class="col-md-3">Mobile : <span class="required">*</span></label>
+                        <label class="col-md-3">Key : <span class="required">*</span></label>
                         <div class="col-md-9">
-                          <input type="text" formControlName="Mobile" class="form-control" placeholder="Mobile No." required>
-                          <span *ngIf="!regForm.get('Mobile').valid && regForm.get('Mobile').touched">Please enter Mobile No. !!!</span>
+                          <input type="text" formControlName="MerchantKey" class="form-control" placeholder="Mobile No." required>
+                          <span *ngIf="!regForm.get('MerchantKey').valid && regForm.get('MerchantKey').touched">Please enter Mobile No. !!!</span>
                         </div>
                     </div>
                     <div class="form-group form-row">
-                        <label class="col-md-3">Email ID <span class="required">*</span></label>
+                        <label class="col-md-3">More ID <span class="required">*</span></label>
                         <div class="col-md-9">
-                          <input type="text" formControlName="EmailId" class="form-control" placeholder="Email Id" required>
-                          <span *ngIf="!regForm.get('EmailId').valid && regForm.get('EmailId').touched">Please enter First Name !!!</span>
+                          <input type="text" formControlName="MdtID" class="form-control" placeholder="Email Id" required>
+                          <span *ngIf="!regForm.get('MdtID').valid && regForm.get('MdtID').touched">Please enter First Name !!!</span>
                         </div>
                     </div>
                     <div class="form-group form-row">
                         <label class="col-md-3">Password <span class="required">*</span></label>
                         <div class="col-md-9">
-                          <input type="text" formControlName="Password" class="form-control" placeholder="Password" required>
-                          <span *ngIf="!regForm.get('Password').valid && regForm.get('Password').touched">Please enter First Name !!!</span>
+                          <input type="text" formControlName="Type" class="form-control" placeholder="Password" required>
+                          <span *ngIf="!regForm.get('Type').valid && regForm.get('Type').touched">Please enter First Name !!!</span>
                         </div>
                     </div>
                 
