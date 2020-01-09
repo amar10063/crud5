@@ -7,7 +7,7 @@ import { Employee } from './employee';
   providedIn: 'root'
 })
 export class EmployeeserviceService {
-  url = '';
+  url = 'http://10.10.10.128:809/api/ActivityAdd/InsertRegistration';
   constructor(private http: HttpClient) { }
 
   createEmployee(employee: Employee): Observable<Employee> {
