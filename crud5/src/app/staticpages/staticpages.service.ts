@@ -1,31 +1,27 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Register} from './register';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class StaticpagesService {
 
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://10.10.10.141:811/WebService1.asmx/HelloWorld';
+  baseUrl = 'http://10.10.10.124:809///api/ActivityAdd/InsertRegistration';
 
-  getUsers() {
-    return this.http.get<any>(this.baseUrl);
-  }
+  createEmployee(employee: Register): Observable<Register> {
+    const body=JSON.stringify(employee) ;
+   //  alert(json);
+   //  return this.http.post<Employee>(this.url + '', json);
+   const headers = new HttpHeaders().set('content-type', 'application/json'); 
+   return this.http.post < Register > ( this.baseUrl , body, {
+       headers
+   })
+   }
 
-  getUserById(id: number) {
-    return this.http.get<Register>(this.baseUrl + '/' + id);
-  }
+  //  getEmployee(): Observable<any> {
+  //   return this.http.get(this.baseUrl);
+  // }
 
-  createUser(user: Register) {
-    return this.http.post(this.baseUrl, user);
-  }
-
-  updateUser(user: Register) {
-    return this.http.put(this.baseUrl + '/' + user.id, user);
-  }
-
-  deleteUser(id: number) {
-    return this.http.delete(this.baseUrl + '/' + id);
-  }
 }

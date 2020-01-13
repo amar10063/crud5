@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import {StaticpagesService} from '../staticpages.service';
+import { Observable } from 'rxjs';
+import {Register} from '../register';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,26 +11,41 @@ import {StaticpagesService} from '../staticpages.service';
 })
 
 export class ContactUsComponent implements OnInit {
-  
+
   registerForm: FormGroup;
   submitted = false;
   users: any;
+  datasaved: boolean;
+  massage: string;
+  regForm: any;
+  AllEmoloyee:Register; 
+  aa:[]; 
 
     constructor(private formBuilder: FormBuilder, private staticpagesService: StaticpagesService) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
             Name: ['', Validators.required],
-            mobile: ['', Validators.required],
+            Mobile: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]]
+            Password: ['', [Validators.required, Validators.minLength(6)]]
         });
 
-        this.staticpagesService.getUsers()
-      .subscribe( data => {
-        this.users = data;
-        alert(data);
-      });
+    }
+    createemployee(employee: Register) {
+      this.staticpagesService.createEmployee(employee).subscribe(
+        (data) => {
+          this.datasaved = true;
+          this.massage = 'User Created';
+          alert(this.massage);
+          this.AllEmoloyee = data;
+          console.log(this.AllEmoloyee);
+          alert(this.AllEmoloyee.Status);
+         this.aa= this.AllEmoloyee.dataList;
+         // console.log(this.aa);
+         // this.registerForm.reset();
+        }
+      )
     }
 
     // convenience getter for easy access to form fields
@@ -36,19 +53,12 @@ export class ContactUsComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
-
-        alert('SUCCESS!! :-)');
+        let employee = this.registerForm.value;
         console.log(this.registerForm.value);
-        this.staticpagesService.createUser(this.registerForm.value)
-      .subscribe( data => {
-        alert("submitted");
-      });
+        this.createemployee(employee);
   }
+
+
     }
 
    

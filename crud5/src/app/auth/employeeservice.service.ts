@@ -14,8 +14,7 @@ export class EmployeeserviceService {
    const body=JSON.stringify(employee) ;
   //  alert(json);
   //  return this.http.post<Employee>(this.url + '', json);
-  const headers = new HttpHeaders().set('content-type', 'application/json');
-  
+  const headers = new HttpHeaders().set('content-type', 'application/json'); 
   return this.http.post < Employee > ( this.url , body, {
       headers
   })

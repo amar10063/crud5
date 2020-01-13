@@ -1,7 +1,10 @@
-export class Register {
-    id: number;
-    firstName: string;
-    lastName: string;    
+export class Register {    
+    Name: string;
+    Mobile: string;    
     email: string;
-    password: string;
+    Password: string;
+  headers: any;
+  Status: any;
+  datalist: Register;
+  dataList: any;
 }
