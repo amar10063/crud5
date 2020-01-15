@@ -2,6 +2,7 @@
       
               <h4>Contact US</h4>
               <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <input type="hidden"  formControlName="Empid">
                 <div class="row">
                     <div class="col-md-6 ">
                   <div class="form-group ">
@@ -43,7 +44,8 @@
                 </div>
                 <div class="col-md-12 ">
                   <div class="form-group">
-                      <button  class="btn btn-primary">Register</button>
+                      <button  class="btn btn-primary">Submit</button>
+                   
                   </div>
                 </div>
             </div>
@@ -65,13 +67,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let employee of aa">
-                <td>1</td>
+              <tr *ngFor="let employee of aa; index as i">
+                <td>{{i+1}}</td>
                 <td>{{employee.Name}}</td>
-                <td>{{employee.Name}}</td>
-                <td>{{employee.Name}}</td>
-                <td><button class="btn btn-primary">Edit</button></td>
-                <td><button class="btn btn-danger">Delete</button></td>
+                <td>{{employee.Mobile}}</td>
+                <td>{{employee.Email}}</td>
+                <td><button class="btn btn-primary" (click)="bindEmployee(employee)">Edit</button></td>
+                <td><button class="btn btn-danger" (click)="deleteEmployee(employee)">Delete</button></td>
               </tr>
               
             </tbody>

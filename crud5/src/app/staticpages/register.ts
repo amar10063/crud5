@@ -1,10 +1,12 @@
-export class Register {    
+export class Register {
+    Flag: number;
     Name: string;
-    Mobile: string;    
+    Mobile: string;
     email: string;
     Password: string;
-  headers: any;
-  Status: any;
-  datalist: Register;
-  dataList: any;
+   headers: any;
+   Status: any;
+   datalist: Register;
+   dataList: any;
+  Empid: any;
 }
