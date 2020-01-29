@@ -4,6 +4,7 @@ import { StaticpagesService } from '../staticpages.service';
 import { Observable } from 'rxjs';
 import { Register } from '../register';
 
+
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
@@ -41,8 +42,8 @@ export class ContactUsComponent implements OnInit {
     if (employee.Empid == '') {
       employee.Flag = '1';
       this.createemployee(employee);
-    }
-    else {
+    } else {
+      employee.Flag = '2';
       this.updateEmployee(employee);
     }
 
@@ -68,7 +69,7 @@ export class ContactUsComponent implements OnInit {
         alert(this.AllEmoloyee.Status);
         this.aa = this.AllEmoloyee.dataList;
         console.log(this.aa);
-        // this.registerForm.reset();
+        this.registerForm.reset();
       }
     )
   }
@@ -76,7 +77,7 @@ export class ContactUsComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
-  
+
 
   deleteEmployee(employee: any) {
     employee.Flag = '3';
@@ -101,8 +102,6 @@ export class ContactUsComponent implements OnInit {
   }
   updateEmployee(employee: any) {
     alert('update');
-    const employee = this.registerForm.value;
-    employee.Flag = '2';
     console.log(employee);
     this.staticpagesService.editEmployeeById(employee).subscribe(
       (data) => {

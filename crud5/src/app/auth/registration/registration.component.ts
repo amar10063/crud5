@@ -15,32 +15,20 @@ export class RegistrationComponent implements OnInit {
   constructor(private formbuilder: FormBuilder, private employeeservice: EmployeeserviceService) { }
 
   ngOnInit() {
-    this.setFormState();
+   
   }
-  setFormState(): void {
-    this.regForm = this.formbuilder.group({
-      AppID: ['', [Validators.required]],
-      MerchantKey: ['', [Validators.required]],
-      MdtID: ['', [Validators.required]],
-      Type: ['', [Validators.required]]
-    })
+  
   }
 
-  onSubmit() {
-    
-    let employee = this.regForm.value;
-    console.log(employee);   
-    this.createemployee(employee);
-    this.regForm.reset();
-  }
-  createemployee(employee: Employee) {
-    this.employeeservice.createEmployee(employee).subscribe(
-      () => {
-        this.datasaved = true;
-        this.massage = "User Created";
-        this.regForm.reset();
-      }
-    )
-  }
+  
+  // createemployee(employee: Employee) {
+  //   this.employeeservice.createEmployee(employee).subscribe(
+  //     () => {
+  //       this.datasaved = true;
+  //       this.massage = "User Created";
+  //       this.regForm.reset();
+  //     }
+  //   )
+  // }
 
-}
+

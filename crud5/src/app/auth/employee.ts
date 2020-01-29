@@ -1,6 +1,11 @@
 export class Employee {
-    AppID: string;
-    MerchantKey: string;
-    MdtID: string;
-    Type: string;
+    Flag: number;
+    Name: string;
+    Mobile: string;
+    email: string;
+    Password: string;
+    headers: any;
+    Status: any;
+    dataList: any;
+    Empid: any;
 }

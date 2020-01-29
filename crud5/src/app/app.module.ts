@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundngComponent } from './page-not-foundng/page-not-foundng.component';
 import { CoursesModule } from './courses/courses.module';
 import { StaticpagesModule } from './staticpages/staticpages.module';
+import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeserviceService } from './auth/employeeservice.service';
@@ -22,7 +23,7 @@ import { EmployeeserviceService } from './auth/employeeservice.service';
     PageNotFoundngComponent
   ],
   imports: [
-    BrowserModule,  ReactiveFormsModule, AuthModule,
+    BrowserModule,  ReactiveFormsModule, AuthModule, AdminModule,
     AppRoutingModule, CoursesModule, StaticpagesModule, HttpClientModule
 
   ],

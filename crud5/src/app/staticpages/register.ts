@@ -8,5 +8,5 @@ export class Register {
    Status: any;
    datalist: Register;
    dataList: any;
-  Empid: any;
+   Empid: any;
 }
